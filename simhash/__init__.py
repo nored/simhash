@@ -208,7 +208,7 @@ class SimhashIndex(object):
         for key in self.get_keys(simhash):
             dups = self.bucket[key]
             self.log.debug('key:%s', key)
-            if len(dups) > 200:
+            if len(dups) > 2000:
                 self.log.warning('Big bucket found. key:%s, len:%s', key, len(dups))
 
             for dup in dups:
